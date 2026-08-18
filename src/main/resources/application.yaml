@@ -6,6 +6,8 @@ spring:
     gateway:
       server:
         webmvc:
+          trusted-proxies: ".*"
+
           routes:
             - id: user-service
               uri: lb://USER-SERVICE
@@ -13,15 +15,12 @@ spring:
                 - Path=/user/**
               filters:
                 - StripPrefix=1
-                - AddRequestHeader=X-Forwarded-Prefix, /user
             - id: department-service
               uri: lb://DEPARTMENT-SERVICE
               predicates:
                 - Path=/department/**
               filters:
                 - StripPrefix=1
-                - AddRequestHeader=X-Forwarded-Prefix, /department
-
 server:
     port: 9196
     forward-headers-strategy: framework
