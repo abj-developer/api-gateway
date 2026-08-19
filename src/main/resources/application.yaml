@@ -80,3 +80,6 @@ springdoc:
 
       - name: Department Service
         url: /department/v3/api-docs
+
+      - name: Auth Service
+        url: /auth/v3/api-docs
