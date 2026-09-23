@@ -99,7 +99,8 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(
                 List.of(
-                        "http://localhost:4200"
+                        "http://localhost:4200",
+                        "https://user-management-angular-v1.vercel.app/"
                 )
         );
 

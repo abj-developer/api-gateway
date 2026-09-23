@@ -11,13 +11,13 @@ spring:
             - id: user-service
               uri: lb://USER-SERVICE
               predicates:
-                - Path=/**
+                - Path=/user/**
               filters:
                 - StripPrefix=1
             - id: department-service
               uri: lb://DEPARTMENT-SERVICE
               predicates:
-                - Path=/**
+                - Path=/department/**
               filters:
                 - StripPrefix=1
             - id: auth-service
